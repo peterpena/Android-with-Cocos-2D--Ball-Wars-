@@ -79,17 +79,14 @@ public class GameApp extends CCColorLayer {
 		int offX = (int) (location.x - greenBall.getPosition().x);
 		int offY = (int) (location.y - greenBall.getPosition().y);
 
-		// Bail out if we are shooting down or backwards
 		if (offX <= 0)
 			return true;
 
-		// Determine where we wish to shoot the projectile to
 		int realX = (int) (winSize.width + (greenBall.getContentSize().width / 2.0f));
 		float ratio = (float) offY / (float) offX;
 		int realY = (int) ((realX * ratio) + greenBall.getPosition().y);
 		CGPoint realDest = CGPoint.ccp(realX, realY);
 
-		// Determine the length of how far we're shooting
 		int offRealX = (int) (realX - greenBall.getPosition().x);
 		int offRealY = (int) (realY - greenBall.getPosition().y);
 		float length = (float) Math.sqrt((offRealX * offRealX)
@@ -97,7 +94,6 @@ public class GameApp extends CCColorLayer {
 		float velocity = 480.0f / 1.0f; // 480 pixels / 1 sec
 		float realMoveDuration = length / velocity;
 
-		// Move projectile to actual endpoint
 		greenBall.runAction(CCSequence.actions(
 				CCMoveTo.action(realMoveDuration, realDest),
 				CCCallFuncN.action(this, "spriteMoveFinished")));
@@ -146,11 +142,7 @@ public class GameApp extends CCColorLayer {
 				if (CGRect.intersects(greenBallRect, targetRect)){
 					targetsToDelete.add(target);
 					targetIndexes.add(targets.get(target));
-					
-			/*		if((targets.indexOf(target)) != 0){
-						CCDirector.sharedDirector().replaceScene(
-								GameOverApp.scene("You Lose..."));
-					}*/
+
 				}
 
 			}
@@ -170,13 +162,6 @@ public class GameApp extends CCColorLayer {
 					}
 				}
 				
-/*				int min = targetIndexes.get(0);
-				for(int index = 1; index < targetIndexes.size(); index++){
-					if(min > targetIndexes.get(index)){
-						CCDirector.sharedDirector().replaceScene(
-								GameOverApp.scene("You Lose..."));						
-					}
-				}*/
 
 				if (++targetsDestroyed >= 5) {
 					targetsDestroyed = 0;
@@ -210,14 +195,14 @@ public class GameApp extends CCColorLayer {
 		if (once) {
 			CCSprite target1 = CCSprite.sprite("greenball1.png");
 			CGSize winSize = CCDirector.sharedDirector().displaySize();
-			int minY = (int) ((target1.getContentSize().height / 2.0f) + 20.0f);
+			//int minY = (int) ((target1.getContentSize().height / 2.0f) + 20.0f);
+			int minY = (int)(winSize.height / 2.0f);
 			int maxY = (int) (winSize.height - target1.getContentSize().height / 2.0f);
 			int rangeY = maxY - minY;
 			actualX = rand.nextInt((int) winSize.width);
 			int actualY = rand.nextInt(rangeY) + minY;
 			target1.setPosition(CGPoint.ccp(actualX, actualY));
 			addChild(target1);
-			target1.setTag(1);
 			targets.put(target1, 0);
 			correctIndex.add(0);
 
@@ -226,7 +211,6 @@ public class GameApp extends CCColorLayer {
 			actualY = rand.nextInt(rangeY) + minY;
 			target2.setPosition(CGPoint.ccp(actualX, actualY));
 			addChild(target2);
-			target2.setTag(1);
 			targets.put(target2, 1);
 			correctIndex.add(1);
 
@@ -235,7 +219,6 @@ public class GameApp extends CCColorLayer {
 			actualY = rand.nextInt(rangeY) + minY;
 			target3.setPosition(CGPoint.ccp(actualX, actualY));
 			addChild(target3);
-			target3.setTag(1);
 			targets.put(target3, 2);
 			correctIndex.add(2);
 
@@ -244,7 +227,6 @@ public class GameApp extends CCColorLayer {
 			actualY = rand.nextInt(rangeY) + minY;
 			target4.setPosition(CGPoint.ccp(actualX, actualY));
 			addChild(target4);
-			target4.setTag(1);
 			targets.put(target4, 3);
 			correctIndex.add(3);
 
@@ -253,7 +235,6 @@ public class GameApp extends CCColorLayer {
 			actualY = rand.nextInt(rangeY) + minY;
 			target5.setPosition(CGPoint.ccp(actualX, actualY));
 			addChild(target5);
-			target5.setTag(1);
 			targets.put(target5, 4);
 			correctIndex.add(4);
 

@@ -49,6 +49,7 @@ public class BallApp extends Activity{
 		// TODO Auto-generated method stub
 		super.onResume();
 		CCDirector.sharedDirector().resume();
+		GameApp.gameSong.start();
 		
 	}
 

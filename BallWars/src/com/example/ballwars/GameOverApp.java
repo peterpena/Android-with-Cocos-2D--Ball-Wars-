@@ -45,7 +45,7 @@ public class GameOverApp extends CCColorLayer{
 		
 		CGSize winSize = CCDirector.sharedDirector().displaySize();
 		
-		label = CCLabel.makeLabel("Won't See Me", "DroidSans", 32);
+		label = CCLabel.makeLabel("Hello There :)", "DroidSans", 32);
 		label.setColor(ccColor3B.ccBLACK);
 		label.setPosition(winSize.width / 2.0f, winSize.height / 2.0f);
 		addChild(label);
@@ -55,7 +55,6 @@ public class GameOverApp extends CCColorLayer{
 	
 	public void gameOverDone()
 	{
-		//CCDirector.sharedDirector().replaceScene(GameApp.scene());
 		Intent i = new Intent("com.example.ballwars.MAINACTIVITY");
 		Context context = CCDirector.sharedDirector().getActivity();
 		context.startActivity(i);

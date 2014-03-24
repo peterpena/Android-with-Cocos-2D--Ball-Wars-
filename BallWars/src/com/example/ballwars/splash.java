@@ -14,13 +14,6 @@ MediaPlayer ourSong;
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
-		//ourSong = MediaPlayer.create(splash.this, R.raw.space_sound);
-		
-		//SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-		//boolean music = getPrefs.getBoolean("checkbox", true);
-		
-		//if(music == true)
-			//ourSong.start();
 		
 		Thread timer = new Thread(){
 			public void run(){
@@ -42,7 +35,6 @@ MediaPlayer ourSong;
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		//ourSong.release();
 		finish();
 	}
 	
