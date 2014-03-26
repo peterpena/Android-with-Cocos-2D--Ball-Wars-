@@ -196,7 +196,7 @@ public class GameApp extends CCColorLayer {
 			CCSprite target1 = CCSprite.sprite("greenball1.png");
 			CGSize winSize = CCDirector.sharedDirector().displaySize();
 			//int minY = (int) ((target1.getContentSize().height / 2.0f) + 20.0f);
-			int minY = (int)(winSize.height / 2.0f);
+			int minY = (int)(winSize.height / 5.0f);
 			int maxY = (int) (winSize.height - target1.getContentSize().height / 2.0f);
 			int rangeY = maxY - minY;
 			actualX = rand.nextInt((int) winSize.width);
@@ -207,6 +207,9 @@ public class GameApp extends CCColorLayer {
 			correctIndex.add(0);
 
 			CCSprite target2 = CCSprite.sprite("greenball2.png");
+			minY = (int)(winSize.height / 4.0f);
+			maxY = (int) (winSize.height - target1.getContentSize().height / 2.0f);
+			rangeY = maxY - minY;
 			actualX = rand.nextInt((int) winSize.width);
 			actualY = rand.nextInt(rangeY) + minY;
 			target2.setPosition(CGPoint.ccp(actualX, actualY));
@@ -215,6 +218,9 @@ public class GameApp extends CCColorLayer {
 			correctIndex.add(1);
 
 			CCSprite target3 = CCSprite.sprite("greenball3.png");
+			minY = (int)(winSize.height / 3.0f);
+			maxY = (int) (winSize.height - target1.getContentSize().height / 2.0f);
+			rangeY = maxY - minY;
 			actualX = rand.nextInt((int) winSize.width);
 			actualY = rand.nextInt(rangeY) + minY;
 			target3.setPosition(CGPoint.ccp(actualX, actualY));
@@ -223,6 +229,9 @@ public class GameApp extends CCColorLayer {
 			correctIndex.add(2);
 
 			CCSprite target4 = CCSprite.sprite("greenball4.png");
+			minY = (int)(winSize.height / 2.0f);
+			maxY = (int) (winSize.height - target1.getContentSize().height / 2.0f);
+			rangeY = maxY - minY;
 			actualX = rand.nextInt((int) winSize.width);
 			actualY = rand.nextInt(rangeY) + minY;
 			target4.setPosition(CGPoint.ccp(actualX, actualY));
@@ -231,6 +240,9 @@ public class GameApp extends CCColorLayer {
 			correctIndex.add(3);
 
 			CCSprite target5 = CCSprite.sprite("greenball5.png");
+			minY = (int)((winSize.height / 2.0f) + 100.0f);
+			maxY = (int) (winSize.height - target1.getContentSize().height / 2.0f);
+			rangeY = maxY - minY;
 			actualX = rand.nextInt((int) winSize.width);
 			actualY = rand.nextInt(rangeY) + minY;
 			target5.setPosition(CGPoint.ccp(actualX, actualY));
