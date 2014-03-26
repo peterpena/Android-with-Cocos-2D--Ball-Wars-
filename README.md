@@ -2,10 +2,10 @@
 =================================
 **Table Of Contents**
 ---------------------
-**1. How To Play
+1. How To Play
 2. Controls
 3. How to setup project
-4. Link to demo video**
+4. Link to demo video
 
 **1. How To Play
 ---------------**
